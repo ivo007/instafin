@@ -1,0 +1,25 @@
+{
+  "name": "instafin-test",
+  "version": "0.0.1",
+  "description": "Testing Instafin environment",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "node_modules/.bin/wdio wdio.conf.js"
+  },
+  "author": "Ivo Tijan",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^5.0.1",
+    "path": "^0.12.7",
+    "webdriverio": "^4.10.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0",
+    "chai": "^4.1.2",
+    "wdio-mocha-framework": "^0.5.12",
+    "wdio-spec-reporter": "^0.1.3"
+  }
+}
