@@ -5,6 +5,7 @@
   "main": "index.js",
   "private": true,
   "scripts": {
+    "test:local": "wdio -- wdio.conf.local.js",
     "test": "wdio",
     "mocha": "mocha --compilers js:babel-core/register"
   },
@@ -21,6 +22,7 @@
     "babel-register": "^6.26.0",
     "chai": "^4.1.2",
     "wdio-mocha-framework": "^0.5.12",
+    "wdio-sauce-service": "^0.4.8",
     "wdio-spec-reporter": "^0.1.3"
   }
 }
