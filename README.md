@@ -76,8 +76,9 @@ Run tests on Sauce Labs
 
 For running tests on TravisCI, enable your forked repo in TravisCI and push some new code.
 
- - set these credentials in in Travis project settings as environmental variables:
+ Set these credentials in in Travis project settings as environmental variables:
  INSTAFIN_USERNAME, INSTAFIN_PASSWORD, SAUCE_USERNAME, SAUCE_ACCESS_KEY
+[see documentation](https://docs.travis-ci.com/user/environment-variables/#Defining-Variables-in-Repository-Settings)
 
 
 (detailed CI instructions TBD)
