@@ -8,6 +8,7 @@ class LoginPage extends Page {
   get username()  { return browser.element('#us1'); }
   get password()  { return browser.element('#pw1'); }
   get form()      { return browser.element('.form-horizontal'); }
+  get button()  { return browser.element("button[type=submit]"); }
 
   open() {
     super.open('user/login');
