@@ -77,7 +77,7 @@ exports.config = {
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    baseUrl: 'https://www.mousehuntgame.com',
+    baseUrl: 'https://demo.instafin.net/',
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 100000,
@@ -129,7 +129,7 @@ exports.config = {
     // See the full list at http://mochajs.org/
     mochaOpts: {
         ui: 'bdd',
-        compilers: ['js:babel-register']
+        compilers: ['js:babel-register', 'js:babel-preset-env']
     },
     //
     // =====
