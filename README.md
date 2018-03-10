@@ -28,9 +28,15 @@ check that the table body of the created loan has exactly 12 + 1 rows
 
 ..
 
+## Features
+
+- testing made with WebDriver.IO and Mocha
+- local testing using Selenium Standalone Server
+- cloud testing using Sauce Labs
+- CI done with GitHub and TravisCI, which runs the Sauce Labs as well
 
 
-**Installation**
+## Installation
 
 First, do the install.
 
@@ -46,6 +52,10 @@ Run Selenium server standalone (make sure it's in separate terminal window)
 
 <code>$ java -jar selenium-server-standalone-3.9.1.jar</code>
 
-Run the test
+Run the test locally
 
-<code>$ .\node_modules\.bin\wdio wdio.conf.js
+<code>$ npm run-script test:local
+
+Run the test on Sauce Labs
+
+<code>$ npm test</code>
