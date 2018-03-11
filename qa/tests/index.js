@@ -5,9 +5,11 @@ import LoginPage from "../POMs/login.page";
 import Dashboard from "../POMs/dashboard.page";
 import SideMenu from "../POMs/sidemenu.page";
 import ClientIndividual from "../POMs/client.individual.create.page";
+import EditClient from "../POMs/client.individual.dashboard.page";
 
-describe.skip('Login page', function () {
+describe('Login page', function () {
 
+  // open login
   before(function () {
     LoginPage.open();
   });
@@ -28,7 +30,7 @@ describe.skip('Login page', function () {
 
 describe("Users", function () {
 
-  //login
+  //log in
   before(function () {
     LoginPage.open();
 
@@ -38,7 +40,7 @@ describe("Users", function () {
     LoginPage.button.click();
   });
 
-  describe.skip("Logged-in User", function () {
+  describe("Logged-in User", function () {
     it("should see Dashboard", function () {
       let title = Dashboard.heading.getText().trim();
 
@@ -50,28 +52,32 @@ describe("Users", function () {
 
     // go to create page
     before(function () {
-      let text = SideMenu.createSection.getText();
-      text = text.trim();
-      console.log("Create User", text);
-
       // SideMenu.clientsSection.click();
-      // random guy: edit/CL00065
+
       ClientIndividual.open("create");
 
       // browser.waitForVisible(ClientIndividual.firstName);
-      browser.pause(2000);
+      browser.pause(1500);
     });
 
     it("Create User", function () {
 
       // first, fill in normal text
-      ClientIndividual.fillInputFields();
+      const name = ClientIndividual.fillInputFields();
 
       // then fill in dropdowns
       ClientIndividual.fillSelectFields();
 
       // create the user
       ClientIndividual.button.click();
+
+      browser.pause(1500);  // just for the sake of it
+
+      // if successful it redirects to /client/individual/dashboard/<id>
+      // we can either test URL or the title, for example
+      const title = EditClient.headingText(name);
+
+      assert("Individual Client -" + name + "- Overview", title, "User creation failed!");
     });
   });
 });

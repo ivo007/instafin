@@ -31,6 +31,7 @@ class ClientIndividualCreatePage extends Page {
   get businessPhone() { return browser.element("[data-qa-element-id='optionalFields.businessPhone']"); }
 
   fillInputFields() {
+    // @todo: fill values from dummyUser.js
     console.log("setting firstName...");
     this.firstName.setValue("Harley");
 
@@ -51,6 +52,8 @@ class ClientIndividualCreatePage extends Page {
 
     console.log("setting businessPhone...");
     this.businessPhone.setValue("Narnia");
+
+    return "Harley Quinn";
   }
 
   fillSelectFields() {
