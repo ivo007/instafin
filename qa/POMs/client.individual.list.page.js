@@ -2,7 +2,7 @@ import _ from "lodash";
 import path from "path";
 import Page from './page';
 
-class ClientIndividualCreatePage extends Page {
+class ClientIndividualListPage extends Page {
 
   get heading() { return browser.element("h1"); }
   get button()  { return browser.element("button[type=submit]"); }
@@ -30,47 +30,6 @@ class ClientIndividualCreatePage extends Page {
   get country() { return browser.element("[data-qa-element-id='country']"); }
   get businessPhone() { return browser.element("[data-qa-element-id='optionalFields.businessPhone']"); }
 
-  fillInputFields() {
-    console.log("setting firstName...");
-    this.firstName.setValue("Harley");
-
-    console.log("setting lastName...");
-    this.lastName.setValue("Quinn");
-
-    console.log("setting street1...");
-    this.street1.setValue("Left Block 20");
-
-    console.log("setting city...");
-    this.city.setValue("Gotham");
-
-    console.log("setting postCode...");
-    this.postCode.setValue("10000");
-
-    console.log("setting country...");
-    this.country.setValue("Narnia");
-
-    console.log("setting businessPhone...");
-    this.businessPhone.setValue("Narnia");
-  }
-
-  fillSelectFields() {
-    console.log("setting gender...");
-    this.gender.click();
-    this.genderInput.setValue("Male");
-
-    console.log("setting dateOfBirth...");
-    this.dateOfBirth.click();
-    this.dateOfBirthInput.setValue("10/10/2017");
-
-    console.log("setting branch...");
-    this.branch.click();
-    this.branchInput.setValue("Taguig");
-
-    console.log("setting createdOn...");
-    this.createdOn.click();
-    this.createdOnInput.setValue("11/03/2018");
-  }
-
   open(section) {
     if(_.isUndefined(section)) section = "";
     super.open(path.join("client/individual", section));
@@ -78,4 +37,4 @@ class ClientIndividualCreatePage extends Page {
 
 }
 
-export default new ClientIndividualCreatePage();
+export default new ClientIndividualListPage();

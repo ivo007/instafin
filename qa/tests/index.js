@@ -28,6 +28,7 @@ describe.skip('Login page', function () {
 
 describe("Users", function () {
 
+  //login
   before(function () {
     LoginPage.open();
 
@@ -47,6 +48,7 @@ describe("Users", function () {
 
   describe("User Manipulation", function () {
 
+    // go to create page
     before(function () {
       let text = SideMenu.createSection.getText();
       text = text.trim();
@@ -63,45 +65,12 @@ describe("Users", function () {
     it("Create User", function () {
 
       // first, fill in normal text
-      console.log("setting firstName...");
-      ClientIndividual.firstName.setValue("Harley");
-
-      console.log("setting lastName...");
-      ClientIndividual.lastName.setValue("Quinn");
-
-      console.log("setting street1...");
-      ClientIndividual.street1.setValue("Left Block 20");
-
-      console.log("setting city...");
-      ClientIndividual.city.setValue("Gotham");
-
-      console.log("setting postCode...");
-      ClientIndividual.postCode.setValue("10000");
-
-      console.log("setting country...");
-      ClientIndividual.country.setValue("Narnia");
-
-      console.log("setting businessPhone...");
-      ClientIndividual.businessPhone.setValue("Narnia");
+      ClientIndividual.fillInputFields();
 
       // then fill in dropdowns
+      ClientIndividual.fillSelectFields();
 
-      console.log("setting gender...");
-      ClientIndividual.gender.click();
-      ClientIndividual.genderInput.setValue("Male");
-
-      console.log("setting dateOfBirth...");
-      ClientIndividual.dateOfBirth.click();
-      ClientIndividual.dateOfBirthInput.setValue("10/10/2017");
-
-      console.log("setting branch...");
-      ClientIndividual.branch.click();
-      ClientIndividual.branchInput.setValue("Taguig");
-
-      console.log("setting createdOn...");
-      ClientIndividual.createdOn.click();
-      ClientIndividual.createdOnInput.setValue("11/03/2018");
-
+      // create the user
       ClientIndividual.button.click();
     });
   });
