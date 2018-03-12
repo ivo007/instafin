@@ -1,4 +1,4 @@
-import appConfig from "./config/config";
+const appConfig = require("./config/config");
 
 exports.config = {
 
