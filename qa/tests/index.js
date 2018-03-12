@@ -7,7 +7,7 @@ import SideMenu from "../POMs/sidemenu.page";
 import ClientIndividual from "../POMs/client.individual.create.page";
 import EditClient from "../POMs/client.individual.dashboard.page";
 
-describe('Login page', function () {
+describe.skip('Login page', function () {
 
   // open login
   before(function () {
@@ -63,7 +63,7 @@ describe("Users", function () {
     it("Create User", function () {
 
       // first, fill in normal text
-      const name = ClientIndividual.fillInputFields();
+      ClientIndividual.fillInputFields();
 
       // then fill in dropdowns
       ClientIndividual.fillSelectFields();
@@ -71,13 +71,16 @@ describe("Users", function () {
       // create the user
       ClientIndividual.button.click();
 
-      browser.pause(1500);  // just for the sake of it
+      browser.pause(3000);  // just for the sake of it
 
       // if successful it redirects to /client/individual/dashboard/<id>
       // we can either test URL or the title, for example
-      const title = EditClient.headingText(name);
+      // const title = EditClient.headingText(name);
+      // assert("Individual Client -" + name + "- Overview" === title, "User creation failed!");
 
-      assert("Individual Client -" + name + "- Overview", title, "User creation failed!");
+      const url = browser.getUrl();
+      assert(url.indexOf("individual/dashboard") > -1, "User creation failed!");
+
     });
   });
 });
