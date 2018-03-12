@@ -5,9 +5,9 @@ import LoginPage from "../POMs/login.page";
 import Dashboard from "../POMs/dashboard.page";
 import SideMenu from "../POMs/sidemenu.page";
 import ClientIndividual from "../POMs/client.individual.create.page";
-import EditClient from "../POMs/client.individual.dashboard.page";
+import ClientDashboard from "../POMs/client.individual.dashboard.page";
 
-describe.skip('Login page', function () {
+describe('Login page', function () {
 
   // open login
   before(function () {
@@ -60,7 +60,7 @@ describe("Users", function () {
       browser.pause(1500);
     });
 
-    it("Create User", function () {
+    it("should create a user", function () {
 
       // first, fill in normal text
       ClientIndividual.fillInputFields();
@@ -71,7 +71,7 @@ describe("Users", function () {
       // create the user
       ClientIndividual.button.click();
 
-      browser.pause(3000);  // just for the sake of it
+      browser.pause(2000);  // just for the sake of it
 
       // if successful it redirects to /client/individual/dashboard/<id>
       // we can either test URL or the title, for example
@@ -80,7 +80,12 @@ describe("Users", function () {
 
       const url = browser.getUrl();
       assert(url.indexOf("individual/dashboard") > -1, "User creation failed!");
+    });
 
+    it("newly created users should have Loan Accounts disabled", function () {
+      const loanTabClass = ClientDashboard.menuLoanAccounts.getAttribute("class");
+
+      assert(loanTabClass === "disabled", "Newly created users should have Loan Accounts disabled!");
     });
   });
 });

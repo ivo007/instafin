@@ -32,6 +32,8 @@ class ClientIndividualListPage extends Page {
 
   open(section) {
     if(_.isUndefined(section)) section = "";
+
+    this.debug("retrieving client page...");
     super.open(path.join("client/individual", section));
   }
 

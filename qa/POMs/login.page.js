@@ -1,6 +1,3 @@
-/**
- * @tutorial http://webdriver.io/guide/testrunner/pageobjects.html#description
- */
 import Page from './page';
 
 class LoginPage extends Page {
