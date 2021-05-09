@@ -13,7 +13,7 @@
   "license": "MIT",
   "dependencies": {
     "dotenv": "^5.0.1",
-    "lodash": "4.17.13",
+    "lodash": "4.17.21",
     "path": "^0.12.7",
     "rgb2hex": "0.1.6",
     "tar": "4.4.2",
