@@ -16,7 +16,7 @@
     "lodash": "4.17.13",
     "path": "^0.12.7",
     "rgb2hex": "0.1.6",
-    "tar": "4.4.2",
+    "tar": "4.4.18",
     "webdriverio": "^4.10.2"
   },
   "devDependencies": {
